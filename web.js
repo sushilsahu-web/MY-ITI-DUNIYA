@@ -82,7 +82,7 @@ function showSlide(index) {
   if (index >= slides.length) currentSlide = 0;
   else if (index < 0) currentSlide = slides.length - 1;
   else currentSlide = index;
-  sliderInner.style.transform = translateX(-${currentSlide * 100}%);
+  sliderInner.style.transform = 'translateX(-${currentSlide * 100}%);
 }
 
 document.getElementById('next').addEventListener('click', () => showSlide(currentSlide + 1));
