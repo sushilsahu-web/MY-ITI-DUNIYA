@@ -78,11 +78,15 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const sliderInner = document.getElementById('sliderInner');
 
+// Set total width of sliderInner based on number of slides
+sliderInner.style.width = `${slides.length * 100}%`;
+
 function showSlide(index) {
   if (index >= slides.length) currentSlide = 0;
   else if (index < 0) currentSlide = slides.length - 1;
   else currentSlide = index;
-  sliderInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  sliderInner.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
 }
 
 document.getElementById('next').addEventListener('click', () => showSlide(currentSlide + 1));
