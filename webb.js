@@ -1,6 +1,5 @@
 const mainBtn = document.getElementById('mainBtn');
 const subButtons = document.getElementById('subButtons');
-const sliderContainer = document.getElementById('sliderContainer');
 
 const btnTeacher = document.getElementById('btnTeacher');
 const btnFriends = document.getElementById('btnFriends');
@@ -17,79 +16,69 @@ const contentDinesh = document.getElementById('contentDinesh');
 const rahulButtons = document.querySelectorAll('.btnRahul');
 const rahulContent = document.querySelector('.rahulContent');
 
-// Hide all content
+const sliderBox = document.getElementById('slider-box');
+
 function hideAllContent() {
   contentManju.style.display = 'none';
   contentDinesh.style.display = 'none';
   rahulContent.style.display = 'none';
+  sliderBox.style.display = 'block'; // Show slider if no content shown
 }
 
-// Toggle main button
 mainBtn.addEventListener('click', () => {
-  const isVisible = subButtons.style.display === 'block';
-  subButtons.style.display = isVisible ? 'none' : 'block';
-  sliderContainer.classList.toggle('hidden', !isVisible);
-  teacherSubButtons.style.display = 'none';
-  friendSubButtons.style.display = 'none';
+  subButtons.style.display = subButtons.style.display === 'block' ? 'none' : 'block';
   hideAllContent();
 });
 
-// My Teacher button
 btnTeacher.addEventListener('click', () => {
-  const isVisible = teacherSubButtons.style.display === 'flex';
-  teacherSubButtons.style.display = isVisible ? 'none' : 'flex';
+  teacherSubButtons.style.display = teacherSubButtons.style.display === 'flex' ? 'none' : 'flex';
   friendSubButtons.style.display = 'none';
   hideAllContent();
 });
 
-// My Friends button
 btnFriends.addEventListener('click', () => {
-  const isVisible = friendSubButtons.style.display === 'flex';
-  friendSubButtons.style.display = isVisible ? 'none' : 'flex';
+  friendSubButtons.style.display = friendSubButtons.style.display === 'flex' ? 'none' : 'flex';
   teacherSubButtons.style.display = 'none';
   hideAllContent();
 });
 
-// Manju content
 btnManju.addEventListener('click', () => {
-  const isVisible = contentManju.style.display === 'block';
   hideAllContent();
-  if (!isVisible) contentManju.style.display = 'block';
+  contentManju.style.display = 'block';
+  sliderBox.style.display = 'none';
 });
 
-// Dinesh content
 btnDinesh.addEventListener('click', () => {
-  const isVisible = contentDinesh.style.display === 'block';
   hideAllContent();
-  if (!isVisible) contentDinesh.style.display = 'block';
+  contentDinesh.style.display = 'block';
+  sliderBox.style.display = 'none';
 });
 
-// Rahul buttons
 rahulButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const isVisible = rahulContent.style.display === 'block';
     hideAllContent();
-    if (!isVisible) rahulContent.style.display = 'block';
+    rahulContent.style.display = 'block';
+    sliderBox.style.display = 'none';
   });
 });
 
-// Slider logic
-let currentSlide = 0;
+// SLIDER FUNCTIONALITY
+const slider = document.getElementById('slider');
 const slides = document.querySelectorAll('.slide');
-const sliderInner = document.getElementById('sliderInner');
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
 
-// Set total width of sliderInner based on number of slides
-sliderInner.style.width = `${slides.length * 100}%`;
+let currentIndex = 0;
 
-function showSlide(index) {
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
-
-  sliderInner.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 500}px)`;
 }
 
-document.getElementById('next').addEventListener('click', () => showSlide(currentSlide + 1));
-document.getElementById('prev').addEventListener('click', () => showSlide(currentSlide - 1));
-
-showSlide(currentSlide);
+prev.addEventListener('click', () => {
+  currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+  updateSlider();
+});
+next.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+});
