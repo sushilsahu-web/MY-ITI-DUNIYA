@@ -2,34 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mentors and Friends</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google-site-verification" content="YXZZSkO7Fp0CnaDO1--B6ATGmncEepi2EacDFveDmPE" />
+ 
+  <title>Sushil Sahu Webpage</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <header class="header">
+    <h1>Tagore Group of Institutions</h1>
+    <p>Turkadih Bypass Road, Sakri Bilaspur | 📞 6232060077, 6232060011</p>
+  </header>
 
-  
-  <div class="slider-container" id="slider-box">
-    <button id="prev">❮</button>
-    <div class="slider" id="slider">
-      <img src="kaj1.jpg" class="slide" />
-      <img src="kaj2.webp" class="slide" />
-      <img src="kaj3.jpg" class="slide" />
-      <img src="kaj4.jpg" class="slide" />
-      <img src="kaj5.jpg" class="slide" />
-      <img src="kaj6.jpg" class="slide" />
-      <img src="kaj7.jpg" class="slide" />
-      <img src="kaj8.webp" class="slide" />
-      <img src="kaj9.webp" class="slide" />
-      <img src="kaj10.webp" class="slide" />
-      <img src="kaj11.webp" class="slide" />
-      <img src="kaj12.webp" class="slide" />
-      <img src="kaj13.jpg" class="slide" />
-      <img src="kaj14.webp" class="slide" />
-      <img src="kaj15.jpg" class="slide" />
+  <div class="container">
+    <section class="admission-box">
+      <h2>ADMISSION OPEN</h2>
+      <p>Academic Session 2025-26</p>
+      <div class="course-grid">
+        <button class="main-btn" onclick="toggleContent('manju')">Manju Sahu</button>
+        <button class="main-btn" onclick="toggleContent('dinesh')">Dinesh Sahu</button>
+        <button class="main-btn" onclick="toggleContent('friends')">My Friends</button>
+        <button class="main-btn" onclick="toggleContent('classmates')">My Classmate</button>
+        <button class="main-btn" onclick="toggleContent('me')">It's Me</button>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="content-box" id="manju">
+        <h3>Manju Sahu</h3>
+        <img src="a.jpg" alt="Manju">
+        <p>Manju Sahu ek acchi student hai, padhai mein tej hai, aur sabse achhe vyavhaar wali ladkiyon mein se ek hai.</p>
+      </div>
+
+      <div class="content-box" id="dinesh">
+        <h3>Dinesh Sahu</h3>
+        <img src="a.jpg" alt="Dinesh">
+        <p>Dinesh Sahu ek shikshak ke roop mein bahut hi samajhdaar aur samarpit hain. Unki padhane ki style alag aur samjhane mein best hai.</p>
+      </div>
+
+      <div class="content-box" id="friends">
+        <h3>My Friends</h3>
+        <div class="sub-buttons">
+          <button onclick="showSubContent('umesh')">Umesh</button>
+          <button onclick="showSubContent('gandhi')">Gandhi</button>
+          <button onclick="showSubContent('rahul')">Rahul</button>
+          <button onclick="showSubContent('subhash')">Subhash</button>
+          <button onclick="showSubContent('vivek')">Vivek</button>
+        </div>
+        <div id="friend-detail"></div>
+      </div>
+
+      <div class="content-box" id="classmates">
+        <h3>My Classmates</h3>
+        <div class="sub-buttons">
+          <!-- 30 classmates -->
+          <!-- Button from classmate1 to classmate30 -->
+          <!-- You can copy-paste or generate using script -->
+          <!-- For now we show few as sample -->
+          <button onclick="showClassmate('classmate1')">Classmate 1</button>
+          <button onclick="showClassmate('classmate2')">Classmate 2</button>
+          <button onclick="showClassmate('classmate3')">Classmate 3</button>
+          <button onclick="showClassmate('classmate4')">Classmate 4</button>
+          <button onclick="showClassmate('classmate5')">Classmate 5</button>
+          <!-- ... up to 30 -->
+          <!-- Add manually or dynamically in future -->
+        </div>
+        <div id="classmate-detail"></div>
+      </div>
+
+      <div class="content-box" id="me">
+        <h3>Sushil Sahu</h3>
+        <p>DOB: 2222</p>
+        <p>Hobby: Coding, Designing aur naye naye websites banana.</p>
+      </div>
+    </section>
+
+    <!-- Removed Smart Classroom to Placement + Horizontal Photos -->
+
+    <!-- Image Slider -->
+    <div class="slider-container">
+      <button class="slider-btn" onclick="prevSlide()">&#8592;</button>
+      <img id="slider-image" src="slider1.jpg" alt="Slider Photo">
+      <button class="slider-btn" onclick="nextSlide()">&#8594;</button>
     </div>
-    <button id="next">❯</button>
   </div>
+
+  <footer class="footer">
+    Thanks for visiting my webpage
+  </footer>
 
   <script src="script.js"></script>
 </body>
