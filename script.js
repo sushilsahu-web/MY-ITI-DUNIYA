@@ -35,12 +35,12 @@ function showClassmate(id) {
   `;
 }
 
-// Image Slider
 const sliderImages = [
   "kaj1.jpg", "kaj2.webp", "kaj3.jpg", "kaj4.jpg", "kaj5.jpg",
   "kaj6.jpg", "kaj7.jpg", "kaj8.webp", "kaj9.webp", "kaj10.webp",
   "kaj11.webp", "kaj12.webp", "kaj13.jpg", "kaj14.webp", "kaj15.jpg"
 ];
+
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -57,6 +57,6 @@ function prevSlide() {
   showSlide(currentSlide - 1);
 }
 
-window.onload = function() {
-  showSlide(currentSlide); // First image show hote hi
+window.onload = function () {
+  showSlide(currentSlide); // Page load hone pe first image dikhayega
 };
