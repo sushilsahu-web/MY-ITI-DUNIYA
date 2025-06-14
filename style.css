@@ -22,12 +22,7 @@ body {
   margin-top: 5px;
 }
 
-.container {
-  max-width: 850px;
-  margin: auto;
-  background-color: #fff;
-  padding: 20px;
-}
+
 
 .admission-box {
   text-align: center;
@@ -122,4 +117,97 @@ body {
   padding: 10px 15px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+.slider-containers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  background-color: #fff0f0;
+  border: 3px solid maroon;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.slider-containers img {
+  width: 280px;
+  height: 180px;
+  border: 3px solid maroon;
+  border-radius: 10px;
+}
+
+.slider-btns {
+  font-size: 24px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fffde7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #800000;
+  margin-bottom: 20px;
+}
+
+.classmate-item {
+  margin-bottom: 10px;
+}
+
+.classmate-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #800000;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.classmate-button:hover,
+.classmate-button.active {
+  background-color:#800000;
+}
+
+.classmate-info {
+  display: none;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border: 2px solid #ffd600;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.classmate-info img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.classmate-info p {
+  font-weight: bold;
+  color: #e65100;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
